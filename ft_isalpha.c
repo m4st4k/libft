@@ -14,7 +14,6 @@
 // 1. check if is upper.
 // 2. check if is lower.
 
-
 static	int	ft_isupper(int c)
 {
 	if ((c >= 'A') && (c <= 'Z'))
