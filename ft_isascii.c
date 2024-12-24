@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbriant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/24 14:48:57 by dbriant           #+#    #+#             */
-/*   Updated: 2024/12/24 14:49:36 by dbriant          ###   ########.fr       */
+/*   Created: 2024/12/24 18:58:41 by dbriant           #+#    #+#             */
+/*   Updated: 2024/12/24 19:12:12 by dbriant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#pragma once
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_toupper(int c);
-int	ft_tolower(int c);
-int	ft_isdigit(int c);
-int	ft_isascii(int c);
+int	ft_isascii(int c)
+{
+	if ((c >= 0) && (c <= 127))
+	{
+		return (1);
+	}
+	return (0);
+}
