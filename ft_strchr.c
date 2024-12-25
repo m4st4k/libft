@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbriant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/24 14:48:57 by dbriant           #+#    #+#             */
-/*   Updated: 2024/12/24 14:49:36 by dbriant          ###   ########.fr       */
+/*   Created: 2024/12/25 17:24:00 by dbriant           #+#    #+#             */
+/*   Updated: 2024/12/25 20:03:15 by dbriant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#pragma once
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_isdigit(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != '\0')
+	{
+		if (*s == c)
+		{
+			return ((char *)s);
+		}
+		s++;
+	}
+	return (NULL);
+}
