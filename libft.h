@@ -23,4 +23,5 @@ int		ft_isprint(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
-int	ft_strcmp(const char *s1, const char *s2);
+int		ft_strncmp(const char *s1, const char *s2);
+void	*ft_memchr(const void *s, int c, size_t n);
