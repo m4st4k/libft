@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbriant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/24 14:48:57 by dbriant           #+#    #+#             */
-/*   Updated: 2024/12/24 14:49:36 by dbriant          ###   ########.fr       */
+/*   Created: 2024/12/26 01:33:19 by dbriant           #+#    #+#             */
+/*   Updated: 2024/12/26 05:02:15 by dbriant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#pragma once
-#include <stdio.h>
-#include <stddef.h>
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_isdigit(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-size_t	ft_strlen(const char *s);
-int	ft_strcmp(const char *s1, const char *s2);
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	while ((unsigned char)*s1 && (unsigned char)*s2)
+	{
+		if ((unsigned char)*s1 != (unsigned char)*s2)
+		{
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		}
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
+}
