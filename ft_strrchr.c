@@ -17,11 +17,15 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	size;
 
 	size = ft_strlen(s);
-	while (s[size] >= 0)
+	if ((unsigned char)c == '\0')
 	{
-		if (s[size] == c)
+		return ((char *)&s[size]);
+	}
+	while (size > 0)
+	{
+		if ((unsigned char)s[size - 1] == (unsigned char)c)
 		{
-			return ((char *)&s[size]);
+			return ((char *)&s[size - 1]);
 		}
 		size--;
 	}

@@ -1,0 +1,39 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dbriant <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/12/20 21:48:28 by dbriant           #+#    #+#              #
+#    Updated: 2024/12/28 05:10:37 by dbriant          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME    = libft.a
+CC      = gcc
+CFLAGS  = -Wall -Wextra -Werror
+
+SRCS    = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_tolower.c \
+          ft_toupper.c ft_isascii.c ft_isprint.c ft_strchr.c \
+          ft_strlen.c ft_strrchr.c ft_strncmp.c ft_memchr.c \
+          ft_memset.c ft_bzero.c ft_memcpy.c ft_memcmp.c \
+          ft_memmove.c
+OBJS    = $(SRCS:.c=.o)
+RM      = rm -f
+
+all : $(NAME)
+
+$(NAME) : $(OBJS)
+	ar rc $(NAME) $(OBJS)  # Create the static library
+
+clean :
+	$(RM) $(OBJS)  # Remove object files
+
+fclean : clean
+	$(RM) $(NAME)  # Remove the library
+
+re: fclean all  # Clean and rebuild everything
+
+.PHONY: all clean fclean re
+
