@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbriant <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: dbriant <marvIin@42.fr>                     +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 16:52:08 by dbriant           #+#    #+#             */
-/*   Updated: 2024/12/28 17:24:37 by dbriant          ###   ########.fr       */
+/*   Updated: 2024/12/31 11:48:18 by dbriant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	sized;
-	size_t	sizes;
-	size_t	i;
+	unsigned char	*des;
+	unsigned char	*sr;
 
-        sized = ft_strlen((char *)dest);
-        sizes = ft_strlen((char *)src);
-        
-        char	*temp = (char *)malloc(sized + sizes);
-	i = 0;
-	if (!n || ((dest == NULL) && (src == NULL)))
+	des = (unsigned char *)dest;
+	sr = (unsigned char *)src;
+	if (!n || (!des && !sr))
+		return (dest);
+	if (des < sr || des >= (sr + n))
 	{
-		return ((char *)dest);
+		while (n--)
+		{
+			*des++ = *sr++;
+		}
 	}
-	
-	while (n && sized && sizes)
+	else
 	{
-		temp[i] = ((char *)src)[i];
-		((char *)dest)[i] = temp[i];
-		src++;
-		i++;
-		n--;
+		des = des +  n;
+		sr = sr + n;
+		while (n--)
+		{
+			*(--des) = *(--sr);
+		}
 	}
-	return ((char *)dest);
+	return (dest);
 }
