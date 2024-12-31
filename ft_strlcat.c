@@ -6,7 +6,7 @@
 /*   By: dbriant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 14:20:37 by dbriant           #+#    #+#             */
-/*   Updated: 2024/12/31 15:00:33 by dbriant          ###   ########.fr       */
+/*   Updated: 2024/12/31 17:58:15 by dbriant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
 	i = dstlen;
-	if(size <= dstlen)
+	if (size <= dstlen)
 	{
 		return (size + srclen);
 	}
