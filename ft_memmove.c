@@ -6,7 +6,7 @@
 /*   By: dbriant <marvIin@42.fr>                     +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 16:52:08 by dbriant           #+#    #+#             */
-/*   Updated: 2024/12/31 11:48:18 by dbriant          ###   ########.fr       */
+/*   Updated: 2024/12/31 14:15:37 by dbriant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -29,7 +29,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		des = des +  n;
+		des = des + n;
 		sr = sr + n;
 		while (n--)
 		{
