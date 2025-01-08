@@ -12,7 +12,6 @@
 #include "libft.h"
 #include <stdlib.h>
 
-//char	*ft_strdup(const char *s);
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*substr;
@@ -25,7 +24,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (start == 0)
 		substr = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
-		else
+	else
 		substr = (char *)malloc((len + 1) * sizeof(char));
 	if (substr == NULL)
 		return (NULL);
@@ -37,13 +36,3 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-
-
-
-
-/*
-int	main(void)
-{
-	printf("Return: %s", ft_substr("", 1, 1));
-}
-*/
