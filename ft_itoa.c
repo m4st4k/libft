@@ -6,7 +6,7 @@
 /*   By: dbriant <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:59:53 by dbriant           #+#    #+#             */
-/*   Updated: 2025/01/13 06:32:26 by dbriant          ###   ########.fr       */
+/*   Updated: 2025/01/13 12:06:08 by dbriant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -121,6 +121,6 @@ char	*ft_itoa(int n)
 /*
 int	main(void)
 {
-	printf("Return: %s", ft_itoa(-1234));
+	printf("Return: %s", ft_itoa(-2147483648));
 }
 */
