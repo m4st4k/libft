@@ -13,12 +13,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void    ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	str[12];
 	char	*p;
 	size_t	i;
-	
+
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
@@ -35,10 +35,11 @@ void    ft_putnbr_fd(int n, int fd)
 	}
 	str[i] = '\0';
 	free(p);
-	ft_putstr_fd("-2147483648", fd);
+	ft_putstr_fd(str, fd);
 }
-
+/*
 int	main(void)
 {
 	ft_putnbr_fd(-2147483648, 2);
 }
+*/

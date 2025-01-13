@@ -13,6 +13,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-
-	printf("%c\n", c);
+	write(fd, &c, 1);
 }
