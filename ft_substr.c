@@ -19,11 +19,13 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	strlen = ft_strlen(s);
 	if (s == 0)
 		return (0);
+	strlen = ft_strlen(s);
 	if (start >= strlen || len == 0)
 		return (ft_strdup(""));
+	if (start + len > strlen)
+		len = strlen - start;
 	if (!start && len > strlen)
 		substr = malloc(strlen + 1);
 	else
