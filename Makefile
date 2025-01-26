@@ -6,7 +6,7 @@
 #    By: dbriant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/20 21:48:28 by dbriant           #+#    #+#              #
-#    Updated: 2025/01/17 11:16:43 by dbriant          ###   ########.fr        #
+#    Updated: 2025/01/26 16:12:24 by dbriant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS    = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_tolower.c \
           ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
           ft_putendl_fd.c ft_putnbr_fd.c
 BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-	  ft_lstadd_back.c
+	  ft_lstadd_back.c ft_lstdelone.c
 OBJS    = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS:.c=.o)
 RM      = rm -f
