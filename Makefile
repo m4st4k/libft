@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME    = libft.a
-CC      = gcc
+CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
 
 SRCS    = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_tolower.c \
