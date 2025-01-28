@@ -50,8 +50,7 @@ static	char	**storeinarr(const char *s, char c, char **result, size_t len)
 			{
 				result[j] = ft_substr(s, start, i - start);
 				if (!result[j])
-					while (j > 0)
-						return (NULL);
+					return (NULL);
 				j++;
 			}
 			start = i + 1;
