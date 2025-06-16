@@ -10,67 +10,73 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
 
-static	int	ft_isnegative(const char *neg)
+static	const	char	*parse_sign(const char *str, int *isneg)
 {
-	if (*neg == '-')
-		return (1);
-	else if (*neg == '+')
-		return (2);
-	else if (ft_isdigit(*neg) == 1)
-		return (3);
-	return (0);
+	if (*str == '+')
+		str++;
+	else if (*str == '-')
+	{
+		*isneg = 1;
+		str++;
+	}
+	return (str);
 }
 
-static	char	*ft_ignoreprint(const char *neg)
+static	const	char	*skip_white_space_chars(const char *str)
 {
-	char	i;
+	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
+		str++;
+	return (str);
+}
 
-	i = '\t';
-	while (i <= '\r')
+static	int	safe_add(int a, int b, int *overflow)
+{
+	if ((a > 0 && b > INT_MAX - a) || (a < 0 && b < INT_MIN - a))
 	{
-		while (*neg == i || *neg == ' ')
-		{
-			neg++;
-			i = '\t';
-		}
-		i++;
+		*overflow = 1;
+		return (0);
 	}
-	return ((char *)neg);
+	return (a + b);
+}
+
+static	int	safe_mul(int a, int b, int *overflow)
+{
+	if ((a > INT_MAX / b) || (a < INT_MIN / b))
+	{
+		*overflow = 1;
+		return (0);
+	}
+	return (a * b);
 }
 
 int	ft_atoi(const char *nptr)
 {
-	size_t	i;
-	int		isneg;
-	int		num;
+	int	overflow;
+	int	num;
+	int	digit;
+	int	isneg;
 
-	num = 0;
-	i = 0;
-	nptr = ft_ignoreprint(nptr);
-	isneg = ft_isnegative(nptr);
-	if (!isneg || *nptr == '\0')
-	{
+	if (nptr == NULL)
 		return (0);
-	}
-	else if (isneg != 3)
+	overflow = 0;
+	num = 0;
+	isneg = 0;
+	nptr = skip_white_space_chars(nptr);
+	nptr = parse_sign(nptr, &isneg);
+	while (ft_isdigit(*nptr) && !overflow)
 	{
+		digit = (*nptr) - '0';
+		if (isneg)
+			digit = -digit;
+		num = safe_mul(num, 10, &overflow);
+		num = safe_add(num, digit, &overflow);
 		nptr++;
 	}
-	while (ft_isdigit(nptr[i]))
-	{
-		num = (nptr[i] - '0') + (num * 10);
-		i++;
-	}
-	if (isneg == 1)
-		num = -num;
-	return (num);
+	if (overflow)
+		num = 0;
+	return ((int)num);
 }
-/*
-int	main(void)
-{
-	char num[] = "\212 139";
-	printf("Return: %d\n", ft_atoi(num));
-	printf("Return: %d\n", atoi(num));
-}
-*/
